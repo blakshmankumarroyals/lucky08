@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Investor Chat</title>
+<style>
+body {
+  font-family: sans-serif;
+}
+
+.chat-container {
+  width: 400px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow-y: scroll;
+  height: 300px;
+  padding: 10px;
+}
+
+.message {
+  margin-bottom: 10px;
+}
+
+.client-message {
+  background-color: #eee;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.investor-message {
+  background-color: #ccf;
+  border-radius: 5px;
+  padding: 5px;
+  margin-left: 20px;
+}
+
+.message-time {
+  font-size: smaller;
+  color: #888;
+}
+
+.input-container {
+  margin-top: 10px;
+}
+
+input[type="text"] {
+  width: 80%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+button {
+  padding: 5px 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<h1>Investor Chat</h1>
+
+<div class="chat-container" id="chat-box">
+  </div>
+
+<div class="input-container">
+  <input type="text" id="message-input" placeholder="Type your message...">
+  <button onclick="sendMessage()">Send</button>
+</div>
+
+<script>
+function sendMessage() {
+  var messageInput = document.getElementById("message-input");
+  var message = messageInput.value;
+  if (message.trim() === "") return;
+
+  // Simulate client message
+  var clientMessage = document.createElement("div");
+  clientMessage.classList.add("message", "client-message");
+  clientMessage.innerHTML = "<p>" + message + "</p><span class='message-time'>" + getTime() + "</span>";
+  document.getElementById("chat-box").appendChild(clientMessage);
+
+  // Simulate investor response (replace with actual logic)
+  setTimeout(function() {
+    var investorMessage = document.createElement("div");
+    investorMessage.classList.add("message", "investor-message");
+    investorMessage.innerHTML = "<p>Investor: " + generateInvestorResponse(message) + "</p><span class='message-time'>" + getTime() + "</span>";
+    document.getElementById("chat-box").appendChild(investorMessage);
+  }, 1000); // Simulate 1-second delay
+
+  messageInput.value = "";
+  scrollToBottom();
+}
+
+function generateInvestorResponse(message) {
+  // Simple example: Echo the client message with "Investor:" prefix
+  return "" + message;
+  // Replace this with actual logic for investor responses
+}
+
+function getTime() {
+  var now = new Date();
+  return now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
+}
+
+function scrollToBottom() {
+  var chatBox = document.getElementById("chat-box");
+  chatBox.scrollTop = chatBox.scrollHeight;
+}
+</script>
+
+</body>
+</html>

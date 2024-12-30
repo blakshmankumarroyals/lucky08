@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+.para {
+    font-weight: 800;
+    font-size: 20px;
+    font-family: Bree Serif;
+    margin-top: 5px;
+    margin-left:150px;
+    color: #ffffff;
+    padding-bottom: 10px;
+}
+
+.heading {
+    margin-top: 30px;
+    margin-left: 10px;
+
+   position: absolute;
+   top:50%;
+   left:50%;
+   transform:translate(-50%,-50%);
+    font-size: 60px;
+   
+    color: transparent;
+    background-image: linear-gradient(#fb9d06,#f1f505);
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-position: -750px 0;
+    animation: backcolor 5s linear infinite alternate;
+}
+@keyframes backcolor{
+    100%{
+        background-position: 0 0;
+    }
+}
+
+.box1{
+    margin-top:380px;
+    margin-left: 150px;
+    
+}
+
+.button1 {
+    align-items: center;
+    background-color: #108bd2;
+    border-radius: 15px;
+    width: 800px;
+    margin-left: 50px;
+    color: #ffffff;
+}
+
+.but-1 {
+    border-radius: 5px;
+    color: #ffffff;
+}
+.butto:hover{
+    scale:0.98;
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.2);
+    
+}
+.butto{
+    border-radius: 15px;
+    color: #ffffff;
+    width: 170px;
+    background-color: #8150a3;
+    margin-left: 50px;
+    margin-top: 20px;
+}
+body {
+    background-image: url(investor.jpg);
+    background-size:cover;
+    width:1000px;
+    height:50 px;
+    margin-top:50px;
+    margin-right: 100px;
+}
+
+header {
+    background-color: #f2f2f2;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav a {
+    margin-right: 20px;
+    text-decoration: none;
+    color: #fef7f7;
+}
+
+main {
+    padding: 40px;
+}
+
+.idea-container {
+    display: flex;
+    justify-content: center;
+}
+
+.idea {
+    text-align: center;
+    margin: 20px;
+}
+
+.idea img {
+    max-width: 300px;
+}
+
+.idea p {
+    color: #888;
+}
+
+.idea a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+#ideologies {
+    margin-top: 40px;
+}
+
+.ideology {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.ideology img {
+    max-width: 100px;
+    margin-right: 20px;
+}

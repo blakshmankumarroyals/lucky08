@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #F0F0F0;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .header {
+      margin-bottom: 20px;
+    }
+
+    .header img {
+      width: 50px;
+    }
+
+    .profile-picture {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background-color: #F0F0F0;
+      border: 2px dashed #ccc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .profile-picture img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .profile-picture .plus-icon {
+      font-size: 36px;
+      color: #ccc;
+    }
+
+    .welcome-message {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .instruction {
+      font-size: 16px;
+      color: #888;
+    }
+
+    .button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <img src="1.jpg" alt="IIS Logo">
+  </div>
+
+  <div class="profile-picture">
+    <img src="10.jpeg"Profile Picture" id="profile-image">
+    <span class="plus-icon" id="plus-icon"></span>
+  </div>
+
+  <h2 class="welcome-message">Welcome Boss</h2>
+  <p class="instruction">Add your profile picture to get started!</p>
+  <a href="ideapage.html"><button class="button">NEXT →</button></a>
+  
+
+  <script>
+    const profilePicture = document.getElementById('profile-image');
+    const plusIcon = document.getElementById('plus-icon');
+
+    profilePicture.addEventListener('click', () => {
+      const fileInput = document.createElement('input');
+      fileInput.type = 'file';
+      fileInput.accept = 'image/*';
+
+      fileInput.addEventListener('change', (event) => {
+        const file = event.target.files[0];
+        const reader = new FileReader();
+
+        reader.onload = (e) => {
+          profilePicture.src = e.target.result;
+          plusIcon.style.display = 'none';
+        };
+
+        reader.readAsDataURL(file);
+      });
+
+      fileInput.click();
+    });
+  </script>
+
+  </div>
+</body>
+</html>
